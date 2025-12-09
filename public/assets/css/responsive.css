@@ -1,0 +1,83 @@
+@media(max-width:1500px){}
+@media(max-width:1400px){}
+@media(max-width:1200px){}
+@media(max-width:1069px){}
+@media(max-width:991px){}
+@media(max-width:768px){
+   .back-icon{
+      display: none;
+   }
+   .search-wrapper .form-control {
+    padding: 0px 0px; 
+    font-size: 14px;
+}
+
+.search-wrapper .dropdown-menu{
+ top: 31px;
+ left: -34px;
+}
+
+.location-btn {
+        font-size: 14px;
+    gap: 2px;
+    padding: 0;
+}
+.trending-box {
+    width: 210px;
+    padding: 12px;
+    top: 92px;
+    left: 0px;
+}
+.offcanvas{
+   height: 170px;
+}
+
+
+
+    header .navbar-nav {     align-items: flex-start;   }
+   
+header .navbar-brand {  width: 15%;}
+}
+@media(max-width:643px){}
+@media(max-width:579px){
+    header .navbar-nav {     align-items: flex-start;   }
+    header .navbar-nav {    gap: 20px;  }
+        header .navbar-brand {     width: 24%;   }
+   }
+
+@media(max-width:480px){
+    
+    
+   header .header-top .top-info li span {  color: #fff;  font-size: 14px;}
+header .header-top .top-info li i img {  width: 25px;  height: 25px;}
+.sticky .headermn .navbar .navbar-brand {   width: 24%;}
+
+header .nav-link {  color: #000;  font-size: 13px;}
+
+
+.hero-banner{
+   padding: 0;
+}
+
+.hero-banner img {
+    object-fit: cover;
+    height: 180px;
+    border-radius: 0;
+}
+.service-detail {
+    padding: 25px 0px;
+}
+.browsing-events {
+    padding: 25px 0px;
+}
+.top-destination {
+    padding: 25px 0px;
+}
+.top-destination {
+    padding: 25px 0px;
+}
+
+}
+
+@media(max-width:400px){}
+@media(max-width:359px){ }
