@@ -115,19 +115,34 @@
                             <div class="offcanvas-body align-items-center">
                                 <ul class="navbar-nav flex-grow-1 justify-content-end">
 
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#loginModal">
-                                            Login
-                                        </a>
-                                    </li>
+                                    @if (Auth::user()->name)
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">
+                                                Welcome, {{ Auth::user()->name }}
+                                            </a>
+                                        </li>
+                                        <form action="{{ route('logout') }}" method="POST" class="d-flex"
+                                            role="search">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button class="btn btn-danger" type="submit">Logout</button>
+                                        </form>
+                                    @else
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-bs-toggle="modal"
+                                                data-bs-target="#loginModal">
+                                                Login
+                                            </a>
+                                        </li>
 
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#" data-bs-toggle="modal"
-                                            data-bs-target="#signupModal">
-                                            Sign Up
-                                        </a>
-                                    </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-bs-toggle="modal"
+                                                data-bs-target="#signupModal">
+                                                Sign Up
+                                            </a>
+                                        </li>
+                                    @endif
+
 
                                 </ul>
 

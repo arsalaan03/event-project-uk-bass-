@@ -134,21 +134,27 @@
       </div>
 
       <div class="modal-body p-4">
-        <form>
+        @if(Session::has('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ Session::get('success') }}
+                        </div>
+                    @endif
+        <form action="{{ route('register') }}" method="POST">
+            @csrf
 
           <div class="mb-3">
             <label class="form-label">Full Name</label>
-            <input type="text" class="form-control form-control-lg" placeholder="Enter your name">
+            <input type="text" name="name" class="form-control form-control-lg" placeholder="Enter your name">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Email Address</label>
-            <input type="email" class="form-control form-control-lg" placeholder="Enter your email">
+            <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Password</label>
-            <input type="password" class="form-control form-control-lg" placeholder="Create a password">
+            <input type="password" name="password" class="form-control form-control-lg" placeholder="Create a password">
           </div>
 
           <button type="submit" class="btn w-100 btn-lg modal-button">Sign Up</button>

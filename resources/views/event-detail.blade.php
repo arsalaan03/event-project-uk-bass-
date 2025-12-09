@@ -71,8 +71,14 @@
 
     <section class="service-detail">
         <!-- EVENT BANNER -->
+        @if (Session::has('success'))
+            <div class="alert alert-success container">
+                {{ Session::get('success') }}
+            </div>
+
+        @endif
         <div class="event-banner mb-4 container">
-            <img src="{{ url('assets/images/ser-detail.webp') }}" class="w-100 rounded">
+            <img src="{{ url('uploads/'.$eventData->image) }}" class="w-100 rounded">
         </div>
 
         <div class="container">
@@ -191,34 +197,53 @@
                     </div>
 
                     <div class="modal-body">
-                        <form>
+                        <form method="POST" action="{{ route('event.booking') }}">
+                            @csrf
 
                             <label class="mb-1 fw-semibold">Your Name</label>
-                            <input type="text" class="form-control mb-3" placeholder="Enter your name">
+                            <input type="hidden" name="event_id" value="{{ $eventData->id }}">
+                            {{-- <input type="hidden" name="user_id" value="{{ $eventData->user_id }}"> --}}
+
+
+                            <input type="text" name="name" class="form-control mb-3" placeholder="Enter your name">
+                        <span>
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                        </span>
 
                             <label class="mb-1 fw-semibold">Mobile Number</label>
 
                             <div class="phone-group mb-3">
-                                <select class="country-code">
-                                    <option value="+91" selected>+91</option>
-                                    <option value="+1">+1</option>
+                                <select class="country-code" name="phone_code">
                                     <option value="+44">+44</option>
-                                    <option value="+971">+971</option>
-                                    <option value="+61">+61</option>
+
                                 </select>
 
-                                <input type="text" class="phone-input" placeholder="Enter mobile">
+                                <input type="text" name="phone" class="phone-input" placeholder="Enter mobile">
+                                <span>
+                                    @error('phone')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </span>
                             </div>
 
 
                             <label class="mb-1 fw-semibold">Tickets</label>
-                            <select class="form-control mb-3">
-                                <option>1 Ticket</option>
-                                <option>2 Tickets</option>
-                                <option>3 Tickets</option>
+                            <select class="form-control mb-3" name="tickets">
+                                <option value="1">1 Ticket</option>
+                                <option value="2">2 Tickets</option>
+                                <option value="3">3 Tickets</option>
+                                <option value="4">4 Tickets</option>
+                                <option value="5">5 Tickets</option>
                             </select>
+                            <span>
+                                @error('tickets')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </span>
 
-                            <button class="btn btn-primary w-100 mt-2">Submit</button>
+                            <button type="submit" class="btn btn-primary w-100 mt-2">Submit</button>
 
                         </form>
                     </div>

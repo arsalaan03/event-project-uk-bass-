@@ -16,3 +16,4 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('event-detail/{slug?}', [HomeController::class, 'eventDetail']);
+Route::post('event-booking', [HomeController::class, 'eventBooking'])->name('event.booking');

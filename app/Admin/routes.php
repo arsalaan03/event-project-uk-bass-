@@ -14,5 +14,6 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('event-categories', EventCategoryController::class);
     $router->resource('events', EventController::class);
+    $router->resource('event-bookings', EventBookingController::class);
 
 });
