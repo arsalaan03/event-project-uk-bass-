@@ -115,7 +115,7 @@
                             <div class="offcanvas-body align-items-center">
                                 <ul class="navbar-nav flex-grow-1 justify-content-end">
 
-                                    @if (Auth::user()->name)
+                                    @if (Auth::user())
                                         <li class="nav-item">
                                             <a class="nav-link" href="#">
                                                 Welcome, {{ Auth::user()->name }}

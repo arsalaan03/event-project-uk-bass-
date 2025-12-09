@@ -1,6 +1,7 @@
 <!-- header  -->
 
-<?php include('header.php') ?>
+@extends('dashboard.layouts.main')
+@section('content')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 
@@ -30,17 +31,17 @@
                     <p class="mb-4">Enter your registered email address.</p>
 
                     <form>
-                       
+
                         <div class="mb-3">
                             <label for="email" class="form-label">Email Address</label>
                             <input type="email" class="form-control" id="email" placeholder="Enter your email">
                         </div>
-                       
+
                        <a href="varification-code.php" class="submit-btn">Continue</a>
 
 
-                       
-                       
+
+
                     </form>
                 </div>
             </div>
@@ -56,4 +57,4 @@
 
 <!-- footer  -->
 
-<?php include('footer.php') ?>
+@endsection

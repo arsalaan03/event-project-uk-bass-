@@ -96,23 +96,29 @@
       </div>
 
       <div class="modal-body p-4">
-        <form>
+                @if(Session::has('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ Session::get('success') }}
+                        </div>
+                    @endif
+        <form action="{{ route('login') }}" method="POST">
+            @csrf
           <div class="mb-3">
             <label class="form-label">Email Address</label>
-            <input type="email" class="form-control form-control-lg" placeholder="Enter your email">
+            <input type="email" name="email" class="form-control form-control-lg" placeholder="Enter your email">
           </div>
 
           <div class="mb-3">
             <label class="form-label">Password</label>
-            <input type="password" class="form-control form-control-lg" placeholder="Enter your password">
+            <input type="password" name="password" class="form-control form-control-lg" placeholder="Enter your password">
           </div>
 
           <div class="d-flex justify-content-between mb-3">
-            <div>
+            {{-- <div>
               <input type="checkbox" id="remember">
               <label for="remember" class="ms-1 small">Remember me</label>
-            </div>
-            <a href="#" class="small text-dark">Forgot Password?</a>
+            </div> --}}
+            {{-- <a href="#" class="small text-dark">Forgot Password?</a> --}}
           </div>
 
           <button type="submit" class="btn modal-button w-100 btn-lg">Login</button>

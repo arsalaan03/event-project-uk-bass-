@@ -171,28 +171,28 @@
 
                 <a href="#" class="uk-card">
                     <div class="uk-img">
-                        <img src="{{ url('assets/images/destination-1.webp') }}" class="img-fluid">
+                        <img src="{{ url('assets/images/London.jpg') }}" class="img-fluid">
                     </div>
                     <div class="uk-name">London</div>
                 </a>
 
                 <a href="#" class="uk-card">
                     <div class="uk-img">
-                        <img src="{{ url('assets/images/destination-1.webp') }}" class="img-fluid">
+                        <img src="{{ url('assets/images/manchester.jpg') }}" class="img-fluid">
                     </div>
                     <div class="uk-name">Manchester</div>
                 </a>
 
                 <a href="#" class="uk-card">
                     <div class="uk-img">
-                        <img src="{{ url('assets/images/destination-1.webp') }}" class="img-fluid">
+                        <img src="{{ url('assets/images/birmingham.jpg') }}" class="img-fluid">
                     </div>
                     <div class="uk-name">Birmingham</div>
                 </a>
 
                 <a href="#" class="uk-card">
                     <div class="uk-img">
-                        <img src="{{ url('assets/images/destination-1.webp') }}" class="img-fluid">
+                        <img src="{{ url('assets/images/Bristol.jpg') }}" class="img-fluid">
                     </div>
                     <div class="uk-name">Bristol</div>
                 </a>
